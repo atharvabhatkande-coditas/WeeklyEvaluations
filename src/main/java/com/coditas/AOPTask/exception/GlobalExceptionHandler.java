@@ -26,4 +26,13 @@ public class GlobalExceptionHandler {
         ApplicationResponse<ErrorResponse> applicationResponse = new ApplicationResponse<>(List.of(error));
         return new ResponseEntity<>(applicationResponse, HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(ValidationException.class)
+    public ResponseEntity<ApplicationResponse<ErrorResponse>> handleValidationException(ValidationException e) {
+        ErrorResponse error = new ErrorResponse(e.getMessage(), LocalDateTime.now(), HttpStatus.NOT_ACCEPTABLE.value());
+        ApplicationResponse<ErrorResponse> applicationResponse = new ApplicationResponse<>(List.of(error));
+        return new ResponseEntity<>(applicationResponse, HttpStatus.NOT_ACCEPTABLE);
+    }
+
+
 }
