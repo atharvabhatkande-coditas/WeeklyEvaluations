@@ -1,5 +1,4 @@
 package com.coditas.JWTAssignment.util;
-
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -20,6 +19,7 @@ public class JWTUtil {
                 .signWith(key,SignatureAlgorithm.HS256)
                 .compact();
         System.out.println("Token : "+token);
+
         return token;
     }
 }
