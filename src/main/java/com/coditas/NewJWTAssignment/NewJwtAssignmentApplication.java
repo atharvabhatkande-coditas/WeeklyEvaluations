@@ -1,13 +1,13 @@
-package com.coditas.JWTAssignment;
+package com.coditas.NewJWTAssignment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JwtAssignmentApplication {
+public class NewJwtAssignmentApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JwtAssignmentApplication.class, args);
+		SpringApplication.run(NewJwtAssignmentApplication.class, args);
 	}
 
 }
