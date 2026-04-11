@@ -33,7 +33,7 @@ public class JwtController {
 
     @PostMapping("/login")
     public ResponseEntity<ApplicationResponse<AuthResponse>>generateToken(@RequestBody AuthRequest authRequest){
-            Authentication authentication= authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(),authRequest.getPassword()));
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(),authRequest.getPassword()));
             ApplicationResponse<AuthResponse>applicationResponse=new ApplicationResponse<>(jwtUtil.generateToken(authRequest.getUsername(),authRequest.getPassword()));
             return new ResponseEntity<>(applicationResponse, HttpStatus.OK);
 
