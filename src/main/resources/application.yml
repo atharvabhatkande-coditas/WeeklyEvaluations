@@ -1,0 +1,32 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 128320846694-ljijtqer69a0qhki2vts5o5a1r36il06.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+              - openid
+              - profile
+              - email
+
+          github:
+            client-id: Ov23liMLgGrebYMDUJ1I
+            client-secret: b8547b88bdbdb2e9907cccaa283bfb7c13ea7e70
+            scope:
+              - read:user
+              - user:email
+
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+            user-name-attribute: sub
+
+          github:
+            authorization-uri: https://github.com/login/oauth/authorize
+            token-uri: https://github.com/login/oauth/access_token
+            user-info-uri: https://api.github.com/user
+            user-name-attribute: id
